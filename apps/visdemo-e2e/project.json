@@ -1,0 +1,9 @@
+{
+  "name": "visdemo-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/visdemo-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["visdemo"],
+  "// targets": "to see all targets run: nx show project visdemo-e2e --web",
+  "targets": {}
+}
