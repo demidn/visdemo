@@ -1,0 +1,9 @@
+{
+  "name": "datafeed0-feedCompany",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/datafeed0/feedCompany/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project datafeed0-feedCompany --web",
+  "targets": {}
+}

@@ -1,0 +1,82 @@
+{
+  "plugins": ["boundaries"],
+  "extends": ["plugin:@nx/react", "../../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "settings": {
+        "boundaries/elements": [
+          {
+            "type": "shared",
+            "pattern": "shared/**"
+          },
+          {
+            "type": "entities",
+            "pattern": "entities/**"
+          },
+          {
+            "type": "features",
+            "pattern": "features/**"
+          },
+          {
+            "type": "widgets",
+            "pattern": "widgets/**"
+          },
+          {
+            "type": "pages",
+            "pattern": "pages/**"
+          },
+          {
+            "type": "providers",
+            "pattern": "providers/**"
+          },
+          {
+            "type": "app",
+            "pattern": "app/**"
+          }
+        ]
+      },
+      "rules": {
+        "boundaries/element-types": [
+          2,
+          {
+            "default": "disallow",
+            "message": "${file.type} is not allowed to import ${dependency.type}",
+            "rules": [
+              {
+                "from": "shared",
+                "allow": ["shared"],
+                "message": "Do not import ${report.specifiers} from ${dependency.source} in helpers"
+              },
+              {
+                "from": "entities",
+                "allow": ["shared"]
+              },
+              {
+                "from": "features",
+                "allow": ["shared", "entities", "images"]
+              },
+              {
+                "from": "widgets",
+                "allow": ["shared", "entities", "features"]
+              },
+              {
+                "from": "pages",
+                "allow": ["shared", "entities", "features", "widgets"]
+              },
+              {
+                "from": "app",
+                "allow": ["shared", "entities", "features", "widgets", "pages", "processes"]
+              },
+              {
+                "from": "providers",
+                "allow": ["shared", "entities"]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

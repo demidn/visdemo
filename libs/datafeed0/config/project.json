@@ -1,0 +1,9 @@
+{
+  "name": "datafeed0-config",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/datafeed0/config/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project datafeed0-config --web",
+  "targets": {}
+}

@@ -1,0 +1,45 @@
+openapi: 3.0.0
+paths:
+  /company:
+    get:
+      operationId: getCompanies
+      summary: ""
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CompanyPresenter"
+      tags:
+        - company
+info:
+  title: Data API
+  description: Responses with different data from feeds
+  version: "1.0"
+  contact: {}
+tags:
+  - name: dev
+    description: ""
+servers: []
+components:
+  schemas:
+    CompanyPresenter:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        sales:
+          type: number
+        averageSalary:
+          type: number
+      required:
+        - id
+        - name
+        - sales
+        - averageSalary

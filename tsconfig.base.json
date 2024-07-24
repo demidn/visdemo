@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@xemida/api-company": ["libs/api/company/src/index.ts"],
+      "@xemida/api-config": ["libs/api/config/src/index.ts"],
+      "@xemida/api-signals": ["libs/api/signals/src/index.ts"],
+      "@xemida/dashboard": ["libs/visdemo/dashboard/src/index.ts"],
+      "@xemida/dashboard/server": ["libs/visdemo/dashboard/src/server.ts"],
+      "@xemida/datafeed0-config": ["libs/datafeed0/config/src/index.ts"],
+      "@xemida/datafeed0-feedCompany": ["libs/datafeed0/feedCompany/src/index.ts"],
+      "@xemida/ui": ["libs/ui/src/index.ts"],
+      "@xemida/ui/icons": ["libs/ui/src/icons.ts"],
+      "@xemida/visdemo-api": ["libs/visdemo/api/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
