@@ -29,7 +29,8 @@
     "../../apps/visdemo/.next/types/**/*.ts",
     "../../dist/apps/visdemo/.next/types/**/*.ts",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../dist/visdemo/.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
