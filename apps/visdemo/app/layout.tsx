@@ -2,6 +2,7 @@ import './global.css';
 import { Layout } from '@xemida/ui';
 import React from 'react';
 import { ReactQueryProvider } from './providers/ReactQueryProvider';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Welcome to visdemo',
@@ -14,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Layout>
           <Layout.Topmenu>
-            <div className="flex gap-[20px] ml-[20px] tracking-[6px]">XEMIDA.</div>
+            <div className="ml-[20px] tracking-[6px]">XEMIDA.</div>
           </Layout.Topmenu>
           <ReactQueryProvider><Layout.Workspace>{children}</Layout.Workspace></ReactQueryProvider>
         </Layout>
