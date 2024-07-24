@@ -12,10 +12,6 @@ import { getSchemaPath, ApiOkResponse, ApiTags, ApiExtraModels, ApiOperation } f
 export class CompanyController {
   constructor(private saveOrUpdateCompanyUsecase: SaveOrUpdateCompanyUsecase, private getCompaniesUsecase: GetCompaniesUsecase) {}
 
-  saveOrUpdateCompany() {
-    return 'saveOrUpdateCompany';
-  }
-
   @Get('/')
   @ApiOperation({ operationId: 'getCompanies' })
   @ApiOkResponse({
@@ -34,6 +30,10 @@ export class CompanyController {
 
   @EventPattern(`CompanyStatsQueue:Initial`)
   saveInitialCompanies(@Payload() data: CompanyDto[]) {
+    this.saveOrUpdateCompanyUsecase.execute(data).catch(e => console.error(e));
+  }
+  @EventPattern(`CompanyStatsQueue:Update`)
+  updateCompany(@Payload() data: CompanyDto[]) {
     this.saveOrUpdateCompanyUsecase.execute(data).catch(e => console.error(e));
   }
 }

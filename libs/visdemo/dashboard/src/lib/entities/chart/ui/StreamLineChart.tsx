@@ -22,7 +22,9 @@ const buildXAxe = (min: number, max: number, maxTicksLimit: number, labels: numb
   };
 };
 
-const buildYAxe = (min: number, max: number) => {
+const buildYAxe = (minValue: number, maxValue: number) => {
+  const min = 0.9 * minValue;
+  const max = 1.1 * maxValue;
   return {
     min,
     max,
@@ -46,6 +48,7 @@ const datasets: ChartDataset[] = [
     label: '',
     type: 'line',
     borderColor: ['#C650DA'],
+    cubicInterpolationMode: 'monotone',
     data: [],
     borderWidth: 3,
     fill: false,

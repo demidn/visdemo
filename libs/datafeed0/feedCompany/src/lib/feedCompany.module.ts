@@ -4,6 +4,7 @@ import { Datafeed0ConfigModule, DatafeedConfigService } from '@xemida/datafeed0-
 import { ClientProxyFactory } from '@nestjs/microservices';
 import { FeedController } from './controllers/feedController';
 import { FeedInitialDataUsecase } from './usecases/feedInitialData.usecase';
+import { FeedSingleCompanyDataUsecase } from './usecases/feedSingleCompanyData.usecase';
 
 @Module({
   imports: [Datafeed0ConfigModule],
@@ -18,7 +19,8 @@ import { FeedInitialDataUsecase } from './usecases/feedInitialData.usecase';
       inject: [DatafeedConfigService],
     },
 
-    FeedInitialDataUsecase
+    FeedInitialDataUsecase,
+    FeedSingleCompanyDataUsecase
   ],
   exports: [],
 })

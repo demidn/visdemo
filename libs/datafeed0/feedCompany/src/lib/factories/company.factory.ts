@@ -10,7 +10,7 @@ export const COMPANIES: Company[] = [
   { id: crypto.randomUUID(), name: 'Microsoft', sales: 1000, averageSalary: 500 },
 ]
 
-const companyFactory = Factory.Sync.makeFactory<Omit<Company, 'name'>>({
+export const companyFactory = Factory.Sync.makeFactory<Omit<Company, 'name'>>({
   id: Factory.each(() => faker.helpers.arrayElement(COMPANIES).id),
   sales: Factory.each(() => faker.number.int({min: 100, max: 1000})),
   averageSalary: Factory.each(() => faker.number.int({min: 100, max: 1000}))
